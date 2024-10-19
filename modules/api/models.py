@@ -109,6 +109,7 @@ StableDiffusionTxt2ImgProcessingAPI = PydanticModelGenerator(
         {"key": "alwayson_scripts", "type": dict, "default": {}},
         {"key": "force_task_id", "type": str, "default": None},
         {"key": "infotext", "type": str, "default": None},
+        {"key": "model_name", "type": str, "default": None},
     ]
 ).generate_model()
 

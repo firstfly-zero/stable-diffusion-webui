@@ -430,6 +430,15 @@ class Api:
         return params
 
     def text2imgapi(self, txt2imgreq: models.StableDiffusionTxt2ImgProcessingAPI):
+
+        model_name = txt2imgreq.model_name
+        models_path = "D:\\Program Files (x86)\\sd-webui-aki\\sd-webui-aki-v4.2\\models"
+        print(sd_models.SdModelData)
+        filename = os.path.join(models_path, 'Stable-diffusion', model_name)
+        if model_name != None:
+            checkpoint_info = sd_models.CheckpointInfo(filename)
+            sd_models.reload_model_weights(info=checkpoint_info)
+
         task_id = txt2imgreq.force_task_id or create_task_id("txt2img")
 
         script_runner = scripts.scripts_txt2img

@@ -1189,6 +1189,8 @@ class StableDiffusionProcessingTxt2Img(StableDiffusionProcessing):
     hr_negative_prompts: list = field(default=None, init=False)
     hr_extra_network_data: list = field(default=None, init=False)
 
+    model_name: str = None
+
     def __post_init__(self):
         super().__post_init__()
 
